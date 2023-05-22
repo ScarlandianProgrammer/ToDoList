@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/site.css">
         <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
         <title>To Do List</title>
     </head>
@@ -27,10 +28,12 @@
             <input type="checkbox" id="completed">
             <span id="completed-error"></span><br>
 
-            <button id="add-item">Add Item</button>
+            <input type="button" id="add-item" value="Add ToDo Item">
         </form>
 
+        <h3>ToDo Items</h3>
         <div id="todoitems-incomplete"></div>
+        <h3>Completed Items</h3>
         <div id="todoitems-complete"></div>
 
         <script src="https://unpkg.com/js-datepicker"></script>

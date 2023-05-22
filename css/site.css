@@ -1,0 +1,18 @@
+.todo{
+    width: 20%;
+    box-sizing: border-box;
+    background-color: lightblue;
+    padding: .25em;
+    border-radius: .75em;
+    margin-bottom: .5em;
+}
+.todo h3{
+    margin: 0;
+}
+.todo p{
+    margin: 0;
+}
+.completed{
+    opacity: 50%;
+    background-color: lightgreen;
+}

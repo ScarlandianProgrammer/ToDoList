@@ -80,20 +80,32 @@ function getToDoItem():ToDoItem {
  * Display the ToDoItem on the webpage
  */
 function displayToDoItem(item:ToDoItem):void {
+    // ex. <h3>Desired Title</h3>
     let titleElement = document.createElement("h3");
     titleElement.innerText = item.title;
 
+    // ex. <p>lorem ipsum</p>
     let descriptionElement = document.createElement("p");
     descriptionElement.innerText = item.description;
 
+    // ex. <p>9/9/99</p>
     let dueDateElement = document.createElement("p");
     dueDateElement.innerText = item.dueDate.toDateString();
 
+    // ex. <div class="todo completed"></div> or <div class="todo"></div>
     let toDoItemDiv = document.createElement("div");
+    toDoItemDiv.classList.add("todo");
     if (item.isCompleted) {
         toDoItemDiv.classList.add("completed");
     }
 
+    /* ex.
+        <div>
+            <h3>Desired Title</h3>
+            <p>lorem ipsum</p>
+            <p>9/9/99</p>
+        </div>
+    */
     toDoItemDiv.appendChild(titleElement);
     toDoItemDiv.appendChild(descriptionElement);
     toDoItemDiv.appendChild(dueDateElement);
@@ -107,13 +119,5 @@ function displayToDoItem(item:ToDoItem):void {
     }
 }
 
-/**
- * Changes the isCompleted variable of an item
- */
-function isCompleted() {
-    if (!this.isCompleted) {
-        this.isCompleted = true;
-    }
-}
-
+// TODO: allow the user to set an item to completed
 // TODO: Store ToDoItems in web storage
