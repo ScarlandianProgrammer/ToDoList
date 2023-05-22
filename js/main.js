@@ -29,7 +29,7 @@ function isValid() {
         isInputValid = false;
         document.getElementById("description-error").innerHTML = "Please enter a valid description";
     }
-    if (desiredDueDate.value == null || desiredTitle.value == "" || desiredDueDate.value < Date()) {
+    if (desiredDueDate.value == null || desiredDueDate.value == "" || desiredDueDate.value < Date()) {
         isInputValid = false;
         document.getElementById("due-date").innerHTML = "Please enter a valid date";
     }
@@ -55,6 +55,7 @@ function displayToDoItem(item) {
     var dueDateElement = document.createElement("p");
     dueDateElement.innerText = item.dueDate.toDateString();
     var toDoItemDiv = document.createElement("div");
+    toDoItemDiv.onclick = markAsComplete;
     toDoItemDiv.classList.add("todo");
     if (item.isCompleted) {
         toDoItemDiv.classList.add("completed");
@@ -70,4 +71,10 @@ function displayToDoItem(item) {
         var itemDiv = document.getElementById("todoitems-incomplete");
         itemDiv.appendChild(toDoItemDiv);
     }
+}
+function markAsComplete() {
+    var itemDiv = this;
+    itemDiv.classList.add("completed");
+    var completedItems = document.getElementById("todoitems-complete");
+    completedItems.appendChild(itemDiv);
 }
