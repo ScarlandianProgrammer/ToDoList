@@ -29,7 +29,9 @@ function isValid() {
         isInputValid = false;
         document.getElementById("description-error").innerHTML = "Please enter a valid description";
     }
-    if (desiredDueDate.value == null || desiredDueDate.value == "" || desiredDueDate.value < Date()) {
+    if (desiredDueDate.value == null
+        || desiredDueDate.value == ""
+        || Date.parse(desiredDueDate.value) < Date.parse(Date())) {
         isInputValid = false;
         document.getElementById("due-date").innerHTML = "Please enter a valid date";
     }

@@ -51,7 +51,9 @@ function isValid():boolean {
         document.getElementById("description-error").innerHTML = "Please enter a valid description";
     }
     // checking if the due date is null, empty or invalid
-    if (desiredDueDate.value == null || desiredDueDate.value == "" || desiredDueDate.value < Date()) {
+    if (desiredDueDate.value == null 
+        || desiredDueDate.value == "" 
+        || Date.parse(desiredDueDate.value) < Date.parse(Date())) {
         isInputValid = false;
         document.getElementById("due-date").innerHTML = "Please enter a valid date";
     }
@@ -121,15 +123,13 @@ function displayToDoItem(item:ToDoItem):void {
     }
 }
 
-// TODO: allow the user to set an item to completed
 /**
- * Adds the "completed" class to the div that was clicked
+ * Adds the "completed" class to the div that was clicked.
  */
 function markAsComplete() {
     let itemDiv = <HTMLElement>this;
     itemDiv.classList.add("completed");
-
+    
     let completedItems = document.getElementById("todoitems-complete");
     completedItems.appendChild(itemDiv);
 }
-// TODO: Store ToDoItems in web storage
