@@ -1,3 +1,22 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
+}
+h1{
+    text-align: center;
+}
+main{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 2em;
+    border: 1px solid black;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color: whitesmoke;
+}
+main > h3{
+    margin-left: 1em;
+}
 .todo{
     width: 20%;
     box-sizing: border-box;
@@ -6,6 +25,7 @@
     border-radius: .75em;
     margin: .5em;
     cursor: pointer;
+    display: inline-block;
 }
 .todo h3{
     margin: 0;
@@ -19,8 +39,15 @@
     text-decoration: line-through;
 }
 #todoitems-incomplete{
-    border: 1px solid black;
+    border-bottom: 1px solid black;
 }
-#todoitems-complete{
-    border: 1px solid blue
+form{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: .5em;
+    background-color: lightgray;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
